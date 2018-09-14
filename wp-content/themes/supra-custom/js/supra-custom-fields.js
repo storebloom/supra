@@ -55,6 +55,14 @@ var SupraCustomFields = ( function( $, wp ) {
 				self.addWysiwygField( count, section );
 			} );
 
+			// Add new wysiwyg image field.
+			this.$container.on( 'click', '.add-wysiwyg-image-repeater-field', function() {
+				var section = $( this ).closest( '.postbox' ).attr( 'id' ).replace( '-supra', '' ),
+					count = $( this ).closest( '.postbox' ).find( '.inside .supra-wysiwyg-image-repeater-field:last-of-type' ).attr( 'data-num' );
+
+				self.addWysiwygImageField( count, section );
+			} );
+
 			// Add new usecase tab field.
 			this.$container.on( 'click', '.add-usecase-field', function() {
 				var section = $( this ).closest( '.postbox' ).attr( 'id' ).replace( '-supra', '' ),
@@ -81,6 +89,14 @@ var SupraCustomFields = ( function( $, wp ) {
 				self.addLinkField( count, section );
 			} );
 
+			// Add new image text repeater field.
+			this.$container.on( 'click', '.add-image-text-field', function() {
+				var section = $( this ).closest( '.postbox' ).attr( 'id' ).replace( '-supra', '' ),
+					count = $( this ).closest( '.postbox' ).find( '.inside .supra-image-text-field:last-of-type' ).attr( 'data-num' );
+
+				self.addImageTextField( count, section );
+			} );
+
 			// Remove overlay field from admin.
 			this.$container.on( 'click', '.remove-overlay-field', function() {
 				$( this ).parent( '.supra-overlay-field' ).remove();
@@ -89,6 +105,11 @@ var SupraCustomFields = ( function( $, wp ) {
 			// Remove wysiwyg field from admin.
 			this.$container.on( 'click', '.remove-wysiwyg-repeater-field', function() {
 				$( this ).parent( '.supra-wysiwyg-repeater-field' ).remove();
+			} );
+
+			// Remove wysiwyg image field from admin.
+			this.$container.on( 'click', '.remove-wysiwyg-image-repeater-field', function() {
+				$( this ).parent( '.supra-wysiwyg-image-repeater-field' ).remove();
 			} );
 
 			// Remove link field from admin.
@@ -106,12 +127,17 @@ var SupraCustomFields = ( function( $, wp ) {
 				$( this ).parent( '.supra-tab-content-overlay' ).remove();
 			} );
 
+			// Remove image text field from admin.
+			this.$container.on( 'click', '.remove-image-text-field', function() {
+				$( this ).parent( '.supra-image-text-field' ).remove();
+			} );
+
 			// Custom image field.
 			this.$container.on( 'click', '.add-supra-image', function() {
-				const self = this;
+				var self = this;
 
 				window.send_to_editor = function( html ) {
-					const imgurl = $( html ).attr('src');
+					var imgurl = $( html ).attr('src');
 
 					$( self ).siblings( 'input' ).val( imgurl );
 					tb_remove();
@@ -317,6 +343,43 @@ var SupraCustomFields = ( function( $, wp ) {
 		},
 
 		/**
+		 * Add new WYSIWYG Image field to section.
+		 *
+		 * @param count
+		 * @param section
+		 */
+		addWysiwygImageField: function( count, section ) {
+			wp.ajax.post( 'get_wysiwyg_image_field', {
+				count: count,
+				section: section,
+				nonce: this.data.nonce
+			} ).always( function( results ) {
+				var newCount = parseInt( count ) + 1,
+					theId = section + '_history_' + newCount + '_content' ;
+
+				//  Add title and label.
+				$( '#' + section + '-supra .inside .supra-wysiwyg-image-repeater-field:last-of-type' ).after(
+					'<div data-num="' + newCount + '" class="supra-wysiwyg-image-repeater-field">' +
+					'<button type="button" class="remove-wysiwyg-image-repeater-field">-</button>' +
+					'<label class="supra-admin-label">New Content</label>' +
+					'</div>'
+				);
+
+				// Add new editor to the page.
+				$( '#' + section + '-supra .inside .supra-wysiwyg-image-repeater-field:last-of-type' ).append( results );
+				$( '#' + section + '-supra .inside .supra-wysiwyg-image-repeater-field:last-of-type' ).append( '<div class="field-label-wrap">' +
+				'<label class="supra-admin-label">New Image</label>' +
+				'<input type="text" name="page-meta[' + section + '][history][' + newCount + '][image]" value="" size="60">' +
+				'<button class="add-supra-image">Add Image</button>' +
+				'</div>' );
+
+				// Reload scripts/assets for tinymce for new editor.
+				tinymce.execCommand('mceAddEditor', false, theId);
+				quicktags({id : theId});
+			} );
+		},
+
+		/**
 		 * Add new link field to section.
 		 *
 		 * @param count
@@ -337,6 +400,32 @@ var SupraCustomFields = ( function( $, wp ) {
 
 			// Add new editor to the page.
 			$( '#' + section + '-supra .inside .supra-link-field:last-of-type' ).append( results );
+		},
+
+		/**
+		 * Add new image text field to section.
+		 *
+		 * @param count
+		 * @param section
+		 */
+		addImageTextField: function( count, section ) {
+			var newCount = parseInt( count ) + 1;
+
+			//  Add title and label.
+			$( '#' + section + '-supra .inside .supra-image-text-field:last-of-type' ).after(
+				'<div data-num="' + newCount + '" class="supra-image-text-field">' +
+				'<div class="field-label-wrap">' +
+				'<label class="supra-admin-label">Partners Title</label>' +
+				'<input type="text" name="page-meta[' + section + '][partners][' + newCount + '][title]" value="" size="60">' +
+				'<button type="button" class="remove-image-text-repeater-field">-</button>' +
+				'</div>' +
+				'<div class="field-label-wrap">' +
+				'<label class="supra-admin-label">Partners Image</label>' +
+				'<input type="text" name="page-meta[' + section + '][partners][' + newCount + '][image]" value="" size="60">' +
+				'<button class="add-supra-image">Add Image</button>' +
+				'</div>' +
+				'</div>'
+			);
 		}
 	};
 } )( window.jQuery, window.wp );

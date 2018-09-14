@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Homepage
+ * Template Name: About
  *
  * @package Supra_Custom
  */
@@ -15,8 +15,8 @@ while ( have_posts() ) :
 	$thumbnail  = get_the_post_thumbnail_url( $id );
 	$main_image = false !== $thumbnail ? 'background: url(' . $thumbnail . ');' : '';
 	// Set for 5 sections.  Change integer to add or remove sections.
-	for ( $i = 1; $i <= 7; $i++ ) {
-		include locate_template( 'template-parts/home-' . $i . '.php' );
+	for ( $c = 1; $c <= 4; $c++ ) {
+		include locate_template( 'template-parts/about-' . $c . '.php' );
 	}
 
 endwhile; // End of the loop.

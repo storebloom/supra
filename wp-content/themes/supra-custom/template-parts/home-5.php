@@ -19,11 +19,8 @@ $section_info = get_section_info( 'home-section', '5', get_the_ID() );
 	<div class="home-5-info-wrap">
 		<?php for ( $b = 1; $b <= 6; $b++ ) : ?>
 			<div class="home-5-info-item">
-				<div class="home-5-icon">
-					<?php get_template_part( 'images/inline', 'home-5-icon-' . (string) $b . '.svg' ); ?>
-				</div>
 				<div class="home-5-info-content">
-					<?php echo esc_html( $section_info[ 'image-content-' . (string) $b ] ); ?>
+					<?php echo wp_kses_post( $section_info[ 'image-content-' . (string) $b ] ); ?>
 				</div>
 			</div>
 		<?php endfor; ?>
