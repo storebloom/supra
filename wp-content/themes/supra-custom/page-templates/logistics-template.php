@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Homepage
+ * Template Name: Transportation
  *
  * @package Supra_Custom
  */
@@ -15,11 +15,10 @@ while ( have_posts() ) :
 	$thumbnail  = get_the_post_thumbnail_url( $id );
 	$main_image = false !== $thumbnail ? 'background: url(' . $thumbnail . ');' : '';
 	// Set for 5 sections.  Change integer to add or remove sections.
-	for ( $i = 1; $i <= 6; $i++ ) {
-		include locate_template( 'template-parts/home-' . $i . '.php' );
+	for ( $d = 1; $d <= 3; $d++ ) {
+		include locate_template( 'template-parts/transportation-' . $d . '.php' );
 	}
 
-	get_template_part( 'footer', 'section' );
 endwhile; // End of the loop.
 
 get_footer();

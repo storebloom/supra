@@ -25,12 +25,10 @@ $section_info = get_section_info( 'home-section', '7', get_the_ID() );
 	<div class="home-7-info-wrap">
 		<?php for ( $c = 1; $c <= 4; $c++ ) : ?>
 			<div class="home-7-info-item">
-				<div class="home-7-icon">
-					<?php get_template_part( 'images/inline', 'home-7-icon-' . (string) $c . '.svg' ); ?>
-				</div>
-				<div class="home-7-info-content">
-					<?php echo esc_html( $section_info[ 'image-content-' . (string) $c ] ); ?>
-				</div>
+
+				<a class="home-7-info-content" href="<?php echo esc_url( $section_info[ 'link-' . $c ] ); ?>">
+					<?php echo wp_kses_post( $section_info[ 'image-content-' . (string) $c ] ); ?>
+				</a>
 			</div>
 		<?php endfor; ?>
 	</div>
