@@ -10,50 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<header class="entry-header" style="background: url( <?php echo esc_url( get_the_post_thumbnail_url() ); ?>">
+		<?php the_title(); ?>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				supra_custom_posted_on();
-				supra_custom_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<div class="middle-graphic-wrap">
+			<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
+		</div>
 	</header><!-- .entry-header -->
-
-	<?php supra_custom_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'supra-custom' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'supra-custom' ),
-			'after'  => '</div>',
-		) );
+		the_content();
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php supra_custom_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
