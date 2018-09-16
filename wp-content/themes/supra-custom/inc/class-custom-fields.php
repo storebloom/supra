@@ -434,91 +434,176 @@ class Custom_Fields {
 					),
 				);
 				break;
+			case 'page-templates/logistics-template.php':
+				// Remove editor features for specific page.
+				remove_post_type_support( 'page', 'editor' );
+
+				$prefix = 'logistics-section-';
+
+				// Logistics section 1.
+				$logo_field = $this->create_custom_field( $postid, $prefix . '1', 'image', 'image' );
+				$form_field = $this->create_custom_field( $postid, $prefix . '1', 'form', 'text' );
+
+				// Logistics section 2.
+				$title_field    = $this->create_custom_field( $postid, $prefix . '2', 'title', 'text' );
+				$content_field  = $this->create_custom_field( $postid, $prefix . '2', 'content', 'wysiwyg' );
+				$overview_field = $this->create_custom_field( $postid, $prefix . '2', 'overview', 'wysiwyg_image' );
+
+				// Logistics section 3.
+				$image_field1   = $this->create_custom_field( $postid, $prefix . '3', 'image-1', 'image' );
+				$image_field2   = $this->create_custom_field( $postid, $prefix . '3', 'image-2', 'image' );
+				$content_field1 = $this->create_custom_field( $postid, $prefix . '3', 'content-1', 'wysiwyg' );
+				$image_field3   = $this->create_custom_field( $postid, $prefix . '3', 'image-3', 'image' );
+				$content_field2 = $this->create_custom_field( $postid, $prefix . '3', 'content-2', 'wysiwyg' );
+				$image_field4   = $this->create_custom_field( $postid, $prefix . '3', 'image-4', 'image' );
+				$content_field3 = $this->create_custom_field( $postid, $prefix . '3', 'content-3', 'wysiwyg' );
+
+				$metabox_array = array(
+					array(
+						'id'          => $prefix . '1-supra',
+						'description' => 'Logistics Section 1',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $logo_field . $form_field,
+					),
+					array(
+						'id'          => $prefix . '2-supra',
+						'description' => 'Logistics Section 2',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field . $content_field . $overview_field,
+					),
+					array(
+						'id'          => $prefix . '3-supra',
+						'description' => 'Logistics Section 3',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $content_field1 . $image_field1 . $image_field2 . $content_field2 . $image_field3 . $content_field3 . $image_field4,
+					),
+				);
+				break;
+			case 'page-templates/distribution-template.php':
+				// Remove editor features for specific page.
+				remove_post_type_support( 'page', 'editor' );
+
+				$prefix = 'distribution-section-';
+
+				// Distribution section 1.
+				$logo_field = $this->create_custom_field( $postid, $prefix . '1', 'image', 'image' );
+				$form_field = $this->create_custom_field( $postid, $prefix . '1', 'form', 'text' );
+
+				// Distribution section 2.
+				$title_field    = $this->create_custom_field( $postid, $prefix . '2', 'title', 'text' );
+				$content_field  = $this->create_custom_field( $postid, $prefix . '2', 'content', 'wysiwyg' );
+				$overview_field = $this->create_custom_field( $postid, $prefix . '2', 'overview', 'wysiwyg_image' );
+
+				// Distribution section 3.
+				$image_field1   = $this->create_custom_field( $postid, $prefix . '3', 'image-1', 'image' );
+				$image_field2   = $this->create_custom_field( $postid, $prefix . '3', 'image-2', 'image' );
+				$content_field1 = $this->create_custom_field( $postid, $prefix . '3', 'content-1', 'wysiwyg' );
+				$image_field3   = $this->create_custom_field( $postid, $prefix . '3', 'image-3', 'image' );
+				$content_field2 = $this->create_custom_field( $postid, $prefix . '3', 'content-2', 'wysiwyg' );
+				$image_field4   = $this->create_custom_field( $postid, $prefix . '3', 'image-4', 'image' );
+				$content_field3 = $this->create_custom_field( $postid, $prefix . '3', 'content-3', 'wysiwyg' );
+				$image_field5   = $this->create_custom_field( $postid, $prefix . '3', 'image-5', 'image' );
+				$content_field4 = $this->create_custom_field( $postid, $prefix . '3', 'content-4', 'wysiwyg' );
+
+				$metabox_array = array(
+					array(
+						'id'          => $prefix . '1-supra',
+						'description' => 'Distribution Section 1',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $logo_field . $form_field,
+					),
+					array(
+						'id'          => $prefix . '2-supra',
+						'description' => 'Distribution Section 2',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field . $content_field . $overview_field,
+					),
+					array(
+						'id'          => $prefix . '3-supra',
+						'description' => 'Distribution Section 3',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $content_field1 . $image_field1 . $image_field2 . $content_field2 . $image_field3 . $content_field3 . $image_field4 . $content_field4 . $image_field5,
+					),
+				);
+				break;
+			case 'page-templates/blog-template.php':
+				// Remove editor features for specific page.
+				remove_post_type_support( 'page', 'editor' );
+
+				$prefix = 'blog-section-';
+
+				// Blog section 2.
+				$title_field2  = $this->create_custom_field( $postid, $prefix . '2', 'title', 'text' );
+				$content_field = $this->create_custom_field( $postid, $prefix . '2', 'content', 'wysiwyg' );
+
+				$metabox_array = array(
+					array(
+						'id'          => $prefix . '2-supra',
+						'description' => 'Blog Section 2',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field2 . $content_field,
+					),
+				);
+				break;
+			case 'page-templates/careers-template.php':
+				// Remove editor features for specific page.
+				remove_post_type_support( 'page', 'editor' );
+
+				$prefix = 'careers-section-';
+
+				// Careers section 2.
+				$title_field2  = $this->create_custom_field( $postid, $prefix . '2', 'title', 'text' );
+				$content_field = $this->create_custom_field( $postid, $prefix . '2', 'content', 'wysiwyg' );
+
+				// Careers section 3.
+				$image_field1   = $this->create_custom_field( $postid, $prefix . '3', 'image-1', 'image' );
+				$image_field2   = $this->create_custom_field( $postid, $prefix . '3', 'image-2', 'image' );
+				$content_field1 = $this->create_custom_field( $postid, $prefix . '3', 'content-1', 'wysiwyg' );
+
+				$metabox_array = array(
+					array(
+						'id'          => $prefix . '2-supra',
+						'description' => 'Careers Section 2',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field2 . $content_field,
+					),
+					array(
+						'id'          => $prefix . '3-supra',
+						'description' => 'Careers Section 3',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $content_field1 . $image_field1 . $image_field2,
+					),
+				);
+				break;
 		} // End switch().
 
 		// Post Type switch case.
 		switch ( $post_type ) {
-			case 'team':
-				$url_field = $this->create_custom_field( $postid, 'team-section-supra', 'linkedin', 'text' );
-
-				$metabox_array = array(
-					array(
-						'id'          => 'team-section-supra',
-						'description' => 'Linkedin Account Url',
-						'screen'      => 'team',
-						'context'     => 'normal',
-						'priority'    => 'high',
-						'args'        => $url_field,
-					),
-				);
-				break;
-			case 'partner':
-				$url_field = $this->create_custom_field( $postid, 'partner-section-supra', 'link', 'text' );
-
-				$metabox_array = array(
-					array(
-						'id'          => 'partner-section-supra',
-						'description' => 'Company Url',
-						'screen'      => 'partner',
-						'context'     => 'normal',
-						'priority'    => 'high',
-						'args'        => $url_field,
-					),
-				);
-				break;
-			case 'usecase':
-				// Main Section.
-				$prefix          = 'usecase-main-section';
-				$sub_title_field = $this->create_custom_field( $postid, $prefix, 'sub-title', 'text' );
-
-				// Tab Section.
-				$prefix2       = 'usecase-tab-section';
-				$usecase_field = $this->create_custom_field( $postid, $prefix2, 'usecase-repeater', 'usecase_repeater' );
-
-				$metabox_array = array(
-					array(
-						'id'          => $prefix . '-supra',
-						'description' => 'Sub-title',
-						'screen'      => 'usecase',
-						'context'     => 'normal',
-						'priority'    => 'high',
-						'args'        => $sub_title_field,
-					),
-					array(
-						'id'          => $prefix2 . '-supra',
-						'description' => 'Tabs',
-						'screen'      => 'usecase',
-						'context'     => 'normal',
-						'priority'    => 'high',
-						'args'        => $usecase_field,
-					),
-				);
-				break;
-			case 'post':
-				// Custom Article Fields.
-				$prefix          = 'article-fields-section';
-				$publisher_field = $this->create_custom_field( $postid, $prefix, 'publisher', 'text' );
-				$author_field    = $this->create_custom_field( $postid, $prefix, 'author', 'text' );
-				$file_field      = $this->create_custom_field( $postid, $prefix, 'file', 'text' );
-
-				$metabox_array = array(
-					array(
-						'id'          => $prefix . '-supra',
-						'description' => 'Custom Article Fields ( Upload file of youre choosing to media library and paste URL in "file" field )',
-						'screen'      => 'post',
-						'context'     => 'normal',
-						'priority'    => 'high',
-						'args'        => $publisher_field . $author_field . $file_field,
-					),
-				);
-				break;
 			case 'career':
 				$url_field = $this->create_custom_field( $postid, 'career-section-supra', 'apply-link', 'text' );
 
 				$metabox_array = array(
 					array(
 						'id'          => 'career-section-supra',
-						'description' => 'Add Apply Now Url',
+						'description' => 'Add Url To iSolved Job Page',
 						'screen'      => 'career',
 						'context'     => 'normal',
 						'priority'    => 'high',

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Transportation
+ * Template Name: Logistics
  *
  * @package Supra_Custom
  */
@@ -16,7 +16,7 @@ while ( have_posts() ) :
 	$main_image = false !== $thumbnail ? 'background: url(' . $thumbnail . ');' : '';
 	// Set for 5 sections.  Change integer to add or remove sections.
 	for ( $d = 1; $d <= 3; $d++ ) {
-		include locate_template( 'template-parts/transportation-' . $d . '.php' );
+		include locate_template( 'template-parts/logistics-' . $d . '.php' );
 	}
 
 endwhile; // End of the loop.
