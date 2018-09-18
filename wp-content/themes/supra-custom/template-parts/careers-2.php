@@ -21,8 +21,4 @@ $section_info = get_section_info( 'careers-section', '2', get_the_ID() );
 			<?php echo wp_kses_post( $section_info['content'] ); ?>
 		</div>
 	<?php endif; ?>
-
-	<div class="middle-graphic-wrap down">
-		<?php get_template_part( 'images/inline', 'mid-cir-long-lines.svg' ); ?>
-	</div>
 </div>

@@ -108,4 +108,68 @@ class Register {
 			);
 		}
 	}
+
+	/**
+	 * Add theme options menu page.
+	 *
+	 * @action admin_menu
+	 */
+	public function admin_menu() {
+		add_theme_page(
+			'Theme Options',
+			'Supra Options',
+			'edit_theme_options',
+			'themes_options',
+			array( $this, 'option_menu_display' )
+		);
+	}
+
+	/**
+	 * Register setting for options page.
+	 *
+	 * @action admin_init
+	 */
+	public function register_options() {
+		register_setting( 'theme-options-settings', 'supra-phone' );
+	}
+
+	/**
+	 * Theme options display.
+	 */
+	public function option_menu_display() {
+		?>
+		<div class="wrap">
+			<h1>Supra Theme Options</h1>
+
+			<form method="post" action="options.php">
+				<?php settings_fields( 'theme-options-settings' ); ?>
+				<?php do_settings_sections( 'theme-options-settings' ); ?>
+				<table class="form-table">
+					<tr valign="top">
+						<th scope="row">Phone Number</th>
+						<td>
+							<input type="text" name="supra-phone" value="<?php echo esc_attr( get_option( 'supra-phone' ) ); ?>" />
+						</td>
+					</tr>
+				</table>
+
+				<?php submit_button(); ?>
+			</form>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Enqueue Assets for front ui.
+	 *
+	 * @action admin_enqueue_scripts
+	 */
+	public function enqueue_admin_assets() {
+		wp_enqueue_script( "{$this->theme->assets_prefix}-front-ui" );
+		wp_add_inline_script( "{$this->theme->assets_prefix}-front-ui", sprintf( 'SupraFrontUI.boot( %s );',
+			wp_json_encode( array(
+				'nonce' => wp_create_nonce( $this->theme->meta_prefix ),
+			) )
+		) );
+	}
 }

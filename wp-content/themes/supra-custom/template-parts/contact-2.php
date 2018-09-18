@@ -1,15 +1,15 @@
 <?php
 /**
- * Template part for home page section 6
+ * Template part for contact page section 2
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Supra_Custom
  */
 
-$section_info = get_section_info( 'home-section', '6', get_the_ID() );
+$section_info = get_section_info( 'contact-section', '2', get_the_ID() );
 ?>
-<div id="home-section-6" class="homepage-section">
+<div id="contact-section-2" class="contact-section">
 	<?php if ( isset( $section_info['title'] ) && '' !== $section_info['title'] ) : ?>
 		<h4 class="section-title">
 			<?php echo wp_kses_post( $section_info['title'] ); ?>
@@ -21,10 +21,4 @@ $section_info = get_section_info( 'home-section', '6', get_the_ID() );
 			<?php echo wp_kses_post( $section_info['content'] ); ?>
 		</div>
 	<?php endif; ?>
-
-	<div class="supra-cta">
-		<a href="/careers">
-			<?php echo esc_html__( 'View Positions', 'supra-custom' ); ?>
-		</a>
-	</div>
 </div>

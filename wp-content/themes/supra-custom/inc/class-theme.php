@@ -73,5 +73,9 @@ class Theme extends Theme_Base {
 			'jquery',
 			'wp-util',
 		), time(), true );
+		wp_register_script( "{$this->assets_prefix}-front-ui", "{$this->dir_url}/js/supra-front-ui.js", array(
+			'jquery',
+			'wp-util',
+		), time(), true );
 	}
 }

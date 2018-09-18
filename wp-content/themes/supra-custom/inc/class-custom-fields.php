@@ -593,6 +593,71 @@ class Custom_Fields {
 					),
 				);
 				break;
+			case 'page-templates/contact-template.php':
+				// Remove editor features for specific page.
+				remove_post_type_support( 'page', 'editor' );
+
+				$prefix = 'contact-section-';
+
+				// Contact section 1.
+				$title_field = $this->create_custom_field( $postid, $prefix . '1', 'title', 'text' );
+
+				// Contact section 2.
+				$title_field2  = $this->create_custom_field( $postid, $prefix . '2', 'title', 'text' );
+				$content_field = $this->create_custom_field( $postid, $prefix . '2', 'content', 'wysiwyg' );
+
+				$metabox_array = array(
+					array(
+						'id'          => $prefix . '1-supra',
+						'description' => 'Contact Section 1',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field,
+					),
+					array(
+						'id'          => $prefix . '2-supra',
+						'description' => 'Contact Section 2',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field2 . $content_field,
+					),
+				);
+				break;
+			case 'page-templates/rate-request-template.php':
+				// Remove editor features for specific page.
+				remove_post_type_support( 'page', 'editor' );
+
+				$prefix = 'request-rate-section-';
+
+				// Request Rate section 1.
+				$title_field = $this->create_custom_field( $postid, $prefix . '1', 'title', 'text' );
+
+				// Request Rate section 2.
+				$form_1 = $this->create_custom_field( $postid, $prefix . '2', 'form-drayage', 'text' );
+				$form_2 = $this->create_custom_field( $postid, $prefix . '2', 'form-ftl', 'text' );
+				$form_3 = $this->create_custom_field( $postid, $prefix . '2', 'form-distribution', 'text' );
+
+				$metabox_array = array(
+					array(
+						'id'          => $prefix . '1-supra',
+						'description' => 'Request Rate Section 1',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $title_field,
+					),
+					array(
+						'id'          => $prefix . '2-supra',
+						'description' => 'Reqeust Rate Section 2',
+						'screen'      => 'page',
+						'context'     => 'normal',
+						'priority'    => 'high',
+						'args'        => $form_1 . $form_2 . $form_3,
+					),
+				);
+				break;
 		} // End switch().
 
 		// Post Type switch case.

@@ -17,7 +17,25 @@ $section_info = get_section_info( 'logistics-section', '1', get_the_ID() );
 	<?php endif; ?>
 
 	<div class="request-info-wrap">
-		<?php echo ! empty( $section_info['form'] ) ? do_shortcode( $section_info['form'] ) : ''; ?>
+		<form action="/request-rate">
+			<div class="form-type">
+				<?php echo esc_html__( 'Drayage', 'supra-custom' ); ?>
+				<input type="radio" name="type" value="drayage">
+				<?php echo esc_html__( 'FTL', 'supra-custom' ); ?>
+				<input type="radio" name="type" value="ftl">
+				<?php echo esc_html__( 'Distribution', 'supra-custom' ); ?>
+				<input type="radio" name="type" value="distribution">
+			</div>
+			<div class="form-zip">
+				<input type="text" name="pickup" pattern="[0-9]{5}" title="" placeholder="Pickup Zip" />
+			</div>
+			<div class="form-zip">
+				<input type="text" name="delivery" pattern="[0-9]{5}" title="" placeholder="Delivery Zip" />
+			</div>
+			<button type="submit">
+				<?php echo esc_html__( 'Get Quote', 'supra-custom' ); ?>
+			</button>
+		</form>
 	</div>
 	<div class="middle-graphic-wrap">
 		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
