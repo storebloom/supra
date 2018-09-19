@@ -24,23 +24,29 @@ $phone_number = ! empty( $phone_number ) ? $phone_number : '';
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
+		<div class="login-account-wrap">
+			<div id="user-signin">
+				<?php echo esc_html__( 'Sign In', 'supra-custom' ); ?>
+			</div>
+			<div class="login-spacer"></div>
+			<div id="user-create">
+				<?php echo esc_html__( 'Create Account', 'supra-custom' ); ?>
+			</div>
+		</div>
 		<div class="site-branding">
 			<a href="<?php echo esc_url( get_home_url() ); ?>">
 				<?php get_template_part( 'images/inline', 'supra-logo.svg' ); ?>
 			</a>
 		</div><!-- .site-branding -->
-		<div class="login-account-wrap">
-			<div id="user-signin">
-				<?php echo esc_html__( 'Sign In', 'supra-custom' ); ?>
-			</div>
-			<div class="login-spacer">
-				|
-			</div>
-			<div id="user-create">
-				<?php echo esc_html__( 'Create Account', 'supra-custom' ); ?>
-			</div>
+		<div class="header-phone-wrap">
+			<?php if ( wp_is_mobile() ) : ?>
+				<img id="open-supra-menu" class="open-menu-icon" src="<?php echo esc_url( get_template_directory_uri() . '/images/icon-menu.svg' ); ?>" alt="Open Navigation Menu" />
+				<?php
+			else :
+				echo esc_html( $phone_number );
+			endif;
+			?>
 		</div>
-
 		<nav id="site-navigation" class="main-navigation">
 			<div class="supra-main-menu-open">
 				<img id="open-supra-menu" class="open-menu-icon" src="<?php echo esc_url( get_template_directory_uri() . '/images/icon-menu.svg' ); ?>" alt="Open Navigation Menu" />
@@ -74,16 +80,6 @@ $phone_number = ! empty( $phone_number ) ? $phone_number : '';
 				</ul>
 			</div>
 		</nav><!-- #site-navigation -->
-
-		<div class="header-phone-wrap">
-			<?php if ( wp_is_mobile() ) : ?>
-				<img id="open-supra-menu" class="open-menu-icon" src="<?php echo esc_url( get_template_directory_uri() . '/images/icon-menu.svg' ); ?>" alt="Open Navigation Menu" />
-				<?php
-			else :
-				echo esc_html( $phone_number );
-			endif;
-			?>
-		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
