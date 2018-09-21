@@ -131,6 +131,10 @@ class Register {
 	 */
 	public function register_options() {
 		register_setting( 'theme-options-settings', 'supra-phone' );
+		register_setting( 'theme-options-settings', 'supra-facebook' );
+		register_setting( 'theme-options-settings', 'supra-twitter' );
+		register_setting( 'theme-options-settings', 'supra-linkedin' );
+		register_setting( 'theme-options-settings', 'supra-rss' );
 	}
 
 	/**
@@ -149,6 +153,30 @@ class Register {
 						<th scope="row">Phone Number</th>
 						<td>
 							<input type="text" name="supra-phone" value="<?php echo esc_attr( get_option( 'supra-phone' ) ); ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">Facebook URL</th>
+						<td>
+							<input type="text" name="supra-facebook" value="<?php echo esc_attr( get_option( 'supra-facebook' ) ); ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">Twitter URL</th>
+						<td>
+							<input type="text" name="supra-twitter" value="<?php echo esc_attr( get_option( 'supra-twitter' ) ); ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">Linkedin URL</th>
+						<td>
+							<input type="text" name="supra-linkedin" value="<?php echo esc_attr( get_option( 'supra-linkedin' ) ); ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">RSS URL</th>
+						<td>
+							<input type="text" name="supra-rss" value="<?php echo esc_attr( get_option( 'supra-rss' ) ); ?>" />
 						</td>
 					</tr>
 				</table>
