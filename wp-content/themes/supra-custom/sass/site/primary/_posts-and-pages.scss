@@ -24,3 +24,10 @@ body {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+h4 {
+	&.section-title {
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+}
