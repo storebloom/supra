@@ -35,6 +35,10 @@ var SupraFrontUI = ( function( $, wp ) {
 			if ( 'Home' === this.data.page ) {
 				this.makeSquare( '.three-image-item' );
 			}
+
+			if ( 'About Us' === this.data.page ) {
+				this.historyWidth();
+			}
 		},
 
 		/**
@@ -63,6 +67,16 @@ var SupraFrontUI = ( function( $, wp ) {
 			var width = $( target ).outerWidth();
 
 			$( target ).css( 'height', width + 'px' );
+		},
+
+		/**
+		 * Make history width size of content.
+		 */
+		historyWidth: function() {
+			var singleWidth = $( '.history-item:first-of-type' ).outerWidth() + 25,
+				containerWidth = ( singleWidth * $( '.history-wrap-inner .history-item' ).length ) + 60;
+
+			$( '.history-wrap-inner' ).css( 'width', containerWidth + 'px' );
 		}
 
 	};

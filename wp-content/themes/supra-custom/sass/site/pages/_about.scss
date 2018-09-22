@@ -1,0 +1,106 @@
+/* About us styling. */
+
+.page-template-about-template {
+  .about-section {
+    padding: 80px 0 90px;
+    text-align: center;
+    position: relative;
+  }
+
+  #about-section-1 {
+    padding: 190px 145px;
+    text-align: left;
+
+    .section-title {
+      font-size: 80px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 90px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.5);
+      max-width: 680px;
+      font-weight: 600;
+      display: inline-block;
+    }
+  }
+
+  #about-section-2 {
+    padding-bottom: 250px;
+
+    .section-image {
+      text-align: left;
+      margin: 32px;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  #about-section-3 {
+
+    .history-wrap {
+      width: 100%;
+      overflow-x: scroll;
+      height: 265px;
+      margin-top: 50px;
+
+      .history-wrap-inner {
+        text-align: left;
+        padding-left: 35px;
+
+        .history-item {
+          display: inline-block;
+          width: 175px;
+          height: 260px;
+          margin-right: 25px;
+          vertical-align: top;
+          box-shadow: 0 0 5px rgba(0,0,0,0.2);
+          text-align: center;
+          background: #f5f5f5;
+          position: relative;
+          z-index: 2;
+
+          .history-red-image {
+            background-color: #cc0000;
+            box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+            line-height: 0;
+          }
+
+          .history-content {
+            color: #999999;
+            font-size: 12px;
+            line-height: 15px;
+            max-width: 135px;
+            margin: -35px auto 0;
+
+            h3 {
+              color: #000000;
+              font-size: 30px;
+              line-height: 40px;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .section-image {
+      position: absolute;
+      right: 0;
+      bottom: -100px;
+      z-index: 1;
+    }
+  }
+
+  #about-section-4 {
+    .partners-wrap {
+      max-width: 900px;
+      margin: auto;
+
+      .partner-item {
+        display: inline-block;
+        vertical-align: top;
+        margin: 30px 30px 0 0;
+        height: 95px;
+      }
+    }
+  }
+}
