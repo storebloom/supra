@@ -1108,6 +1108,8 @@ body.home #home-section-1 .section-title {
   margin-left: 145px;
   font-weight: 600;
   display: inline-block;
+  vertical-align: top;
+  margin-top: 50px;
 }
 body.home #home-section-1 .request-info-wrap {
   display: inline-block;
