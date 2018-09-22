@@ -17,27 +17,34 @@ $section_info = get_section_info( 'home-section', '3', get_the_ID() );
 		</h4>
 	<?php endif; ?>
 
+	<div class="three-image-wrap">
 	<?php
 	if ( isset( $section_info['image-1'] ) && '' !== $section_info['image-1'] ) :
 		for ( $x = 1; $x <= 3; $x++ ) :
 			?>
-		<div class="three-image-wrap">
 			<div class="three-image-item" style="background: url(<?php echo esc_attr( $section_info[ 'image-' . $x ] ); ?>);">
-				<div class="three-image-title">
-					<?php echo esc_html( $section_info[ 'image-title-' . $x ] ); ?>
-				</div>
-				<div class="three-image-content">
-					<?php echo esc_html( $section_info[ 'image-content-' . $x ] ); ?>
-				</div>
+				<a href="<?php echo esc_attr( $section_info[ 'image-url-' . $x ] ); ?>">
+					<div class="three-image-title">
+						<?php echo esc_html( $section_info[ 'image-title-' . $x ] ); ?>
+					</div>
+					<div class="three-image-content">
+						<?php echo esc_html( $section_info[ 'image-content-' . $x ] ); ?>
+					</div>
+				</a>
 			</div>
-		</div>
 			<?php
 		endfor;
 	endif;
 	?>
+	</div>
 	<div class="supra-cta">
-		<a hre="#">
-			<?php echo esc_html__( 'Learn More', 'supra-custom' ); ?>
+		<a hre="#" class="">
+			<button class="supra-button-red">
+				<?php echo esc_html__( 'Learn More', 'supra-custom' ); ?>
+			</button>
 		</a>
+	</div>
+	<div class="middle-graphic-wrap short">
+		<?php get_template_part( 'images/inline', 'long-lines-icons.svg' ); ?>
 	</div>
 </div>

@@ -69,15 +69,11 @@
 .global-footer-section {
   text-align: center;
   color: #ffffff;
+  position: relative;
 
   .middle-graphic-wrap {
-    position: relative;
-
-    svg {
-      position: absolute;
       top: -85px;
-      z-index: 1;
-    }
+      bottom: unset;
   }
 
   .section-content {

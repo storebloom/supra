@@ -16,23 +16,27 @@ $section_info = get_section_info( 'home-section', '5', get_the_ID() );
 		</h4>
 	<?php endif; ?>
 
+	<?php if ( isset( $section_info['content'] ) && '' !== $section_info['content'] ) : ?>
+		<div class="section-5-content">
+			<?php echo wp_kses_post( $section_info['content'] ); ?>
+		</div>
+	<?php endif; ?>
+
 	<div class="home-5-info-wrap">
 		<?php for ( $b = 1; $b <= 6; $b++ ) : ?>
 			<div class="home-5-info-item">
-				<div class="home-5-info-content">
-					<?php echo wp_kses_post( $section_info[ 'image-content-' . (string) $b ] ); ?>
-				</div>
+				<?php echo wp_kses_post( $section_info[ 'image-content-' . (string) $b ] ); ?>
 			</div>
 		<?php endfor; ?>
 	</div>
 
 	<?php if ( isset( $section_info['image'] ) && '' !== $section_info['image'] ) : ?>
-		<div class="image-wrap">
+		<div class="third-image-wrap">
 			<img src="<?php echo esc_attr( $section_info['image'] ); ?>">
 		</div>
 	<?php endif; ?>
 
-	<div class="middle-graphic-wrap long">
-		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
+	<div class="middle-graphic-wrap">
+		<?php get_template_part( 'images/inline', 'home-long-lines.svg' ); ?>
 	</div>
 </div>

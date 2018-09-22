@@ -228,6 +228,9 @@ class Custom_Fields {
 				$image_title1 = $this->create_custom_field( $postid, $prefix . '3', 'image-title-1', 'text' );
 				$image_title2 = $this->create_custom_field( $postid, $prefix . '3', 'image-title-2', 'text' );
 				$image_title3 = $this->create_custom_field( $postid, $prefix . '3', 'image-title-3', 'text' );
+				$image_url1   = $this->create_custom_field( $postid, $prefix . '3', 'image-url-1', 'text' );
+				$image_url2   = $this->create_custom_field( $postid, $prefix . '3', 'image-url-2', 'text' );
+				$image_url3   = $this->create_custom_field( $postid, $prefix . '3', 'image-url-3', 'text' );
 
 				// Home section 4.
 				$content_field4 = $this->create_custom_field( $postid, $prefix . '4', 'content4', 'wysiwyg' );
@@ -235,7 +238,7 @@ class Custom_Fields {
 				$image_field5   = $this->create_custom_field( $postid, $prefix . '4', 'image-5', 'image' );
 
 				// Home section 5.
-				$title_field3   = $this->create_custom_field( $postid, $prefix . '5', 'title', 'text' );
+				$title_field6   = $this->create_custom_field( $postid, $prefix . '5', 'title', 'text' );
 				$content_field5 = $this->create_custom_field( $postid, $prefix . '5', 'content', 'wysiwyg' );
 				$image_content1 = $this->create_custom_field( $postid, $prefix . '5', 'image-content-1', 'wysiwyg' );
 				$image_content2 = $this->create_custom_field( $postid, $prefix . '5', 'image-content-2', 'wysiwyg' );
@@ -285,7 +288,7 @@ class Custom_Fields {
 						'screen'      => 'page',
 						'context'     => 'normal',
 						'priority'    => 'high',
-						'args'        => $title_field3 . $image_field1 . $image_title1 . $image_text1 . $image_field2 . $image_title2 . $image_text2 . $image_field3 . $image_title3 . $image_text3,
+						'args'        => $title_field3 . $image_field1 . $image_title1 . $image_text1 . $image_url1 . $image_field2 . $image_title2 . $image_text2 . $image_url2 . $image_field3 . $image_title3 . $image_text3 . $image_url3,
 					),
 					array(
 						'id'          => $prefix . '4-supra',
@@ -301,7 +304,7 @@ class Custom_Fields {
 						'screen'      => 'page',
 						'context'     => 'normal',
 						'priority'    => 'high',
-						'args'        => $title_field3 . $content_field5 . $image_content1 . $image_content2 . $image_content3 . $image_content4 . $image_content5 . $image_content6 . $image_field6,
+						'args'        => $title_field6 . $content_field5 . $image_content1 . $image_content2 . $image_content3 . $image_content4 . $image_content5 . $image_content6 . $image_field6,
 					),
 					array(
 						'id'          => $prefix . '6-supra',

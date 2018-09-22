@@ -24,7 +24,9 @@ $section_info = get_section_info( 'home-section', '6', get_the_ID() );
 
 	<div class="supra-cta">
 		<a href="/careers">
-			<?php echo esc_html__( 'View Positions', 'supra-custom' ); ?>
+			<button class="supra-button-red">
+				<?php echo esc_html__( 'View Positions', 'supra-custom' ); ?>
+			</button>
 		</a>
 	</div>
 </div>
