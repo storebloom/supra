@@ -55,7 +55,7 @@ class Theme extends Theme_Base {
 	 */
 	public function register_assets() {
 		// Version CSS file in a theme
-		wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Montserrat:500,600', array(), '1' );
+		wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css?family=Montserrat:500,600,700', array(), '1' );
 		wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', array(), time() );
 		wp_enqueue_style( 'supra-custom-style', get_stylesheet_directory_uri() . '/styles/main.css', array(), time() );
 		wp_register_script( "{$this->assets_prefix}-front-ui", "{$this->dir_url}/js/supra-front-ui.js", array(

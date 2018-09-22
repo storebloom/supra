@@ -193,10 +193,13 @@ class Register {
 	 * @action admin_enqueue_scripts
 	 */
 	public function enqueue_admin_assets() {
+		global $post;
+
 		wp_enqueue_script( "{$this->theme->assets_prefix}-front-ui" );
 		wp_add_inline_script( "{$this->theme->assets_prefix}-front-ui", sprintf( 'SupraFrontUI.boot( %s );',
 			wp_json_encode( array(
 				'nonce' => wp_create_nonce( $this->theme->meta_prefix ),
+				'page'  => $post->post_title,
 			) )
 		) );
 	}

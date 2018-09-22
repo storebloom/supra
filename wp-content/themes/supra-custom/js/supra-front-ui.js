@@ -31,6 +31,10 @@ var SupraFrontUI = ( function( $, wp ) {
 		init: function () {
 			this.$pageContainer = $( 'body.page' );
 			this.listen();
+
+			if ( 'Home' === this.data.page ) {
+				this.makeSquare( '.three-image-item' );
+			}
 		},
 
 		/**
@@ -48,6 +52,18 @@ var SupraFrontUI = ( function( $, wp ) {
 				$( '.rr-form-wrap' ).fadeOut();
 				$( '#' + type ).fadeIn();
 			} );
+		},
+
+		/**
+		 * Make div into square.
+		 *
+		 * @param target
+		 */
+		makeSquare: function( target ) {
+			var width = $( target ).outerWidth();
+
+			$( target ).css( 'height', width + 'px' );
 		}
+
 	};
 } )( window.jQuery, window.wp );

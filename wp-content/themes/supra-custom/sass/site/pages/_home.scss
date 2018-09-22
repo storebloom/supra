@@ -1,0 +1,244 @@
+/* Home page styles. */
+
+body.home {
+  .homepage-section {
+    padding: 80px 0 90px;
+    text-align: center;
+    position: relative;
+  }
+
+  #home-section-1 {
+    padding: 44px 0 80px;
+
+    .section-title {
+      font-size: 80px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 90px;
+      text-shadow: 0 0 8px rgba(0,0,0,0.5);
+      max-width: 680px;
+      margin-left: 145px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .request-info-wrap {
+      display: inline-block;
+      background: #ffffff;
+      color: #000000;
+      margin-left: 142px;
+      padding: 10px 20px 14px;
+      box-shadow: 0 0 4px 0 rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 442px;
+
+      h2 {
+        font-size: 30px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+
+      form {
+        font-size: 14px;
+
+        input {
+          &[type="radio"] {
+            margin: 14px 5px 14px 30px;
+
+            &:first-of-type {
+              margin-left: 0;
+            }
+          }
+        }
+
+        .form-zip {
+          margin-bottom: 10px;
+        }
+
+        button {
+          width: 110%;
+          max-width: unset;
+        }
+      }
+    }
+  }
+
+  #home-section-2 {
+    .section-content {
+      max-width: 909px;
+      font-size: 20px;
+      line-height: 40px;
+      text-align: center;
+      margin: auto;
+    }
+  }
+
+  #home-section-3 {
+    background: #f5f5f5;
+
+    .three-image-item {
+      width: 30%;
+      max-width: 330px;
+      display: inline-block;
+      vertical-align: top;
+
+      &:nth-child(2) {
+        margin: 0 30px;
+      }
+      
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .three-image-title {
+        font-size: 30px;
+        text-shadow: 0 0 8px rgba(0,0,0,0.5);
+        margin-top: 40%;
+        -webkit-transition: margin-top .5s; /* Safari */
+        transition: margin-top .5s;
+      }
+
+      .three-image-content {
+        opacity: 0;
+        -webkit-transition: opacity .5s; /* Safari */
+        transition: opacity .5s;
+        color: #cfcfcf;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 18px;
+        max-width: 225px;
+        text-align: center;
+        margin: auto;
+      }
+
+      &:hover {
+        .three-image-title {
+          margin-top: 35%;
+        }
+
+        .three-image-content {
+          opacity: 1;
+        }
+      }
+    }
+
+    .supra-cta {
+      margin-top: 20px;
+    }
+  }
+
+  #home-section-4 {
+    text-align: left;
+    padding-bottom: 0;
+
+    .image-wrap {
+      display: inline-block;
+      position: relative;
+
+      &:first-of-type {
+        margin-top: -45px;
+      }
+
+      .section-4-content {
+        position: absolute;
+        bottom: -310px;
+        left: 32%;
+
+        h2 {
+          font-size: 80px;
+          line-height: 90px;
+          font-weight: 700;
+
+          &:first-child {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    .second-image-wrap {
+      position: absolute;
+      right: 10%;
+      top: 631px;
+    }
+
+    .right-graphic-wrap {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: -45px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .left-graphic-wrap {
+      text-align: center;
+      right: -135px;
+      z-index: 1;
+      position: relative;
+      top: 100px;
+    }
+  }
+
+  #home-section-5 {
+    background: #f5f5f5;
+    padding-bottom: 200px;
+
+    .section-5-content {
+      font-size: 30px;
+      text-align: center;
+      max-width: 873px;
+      margin: auto;
+    }
+
+    .home-5-info-wrap {
+      max-width: 750px;
+      margin: 30px auto;
+
+      .home-5-info-item {
+        background: #ffffff;
+        display: inline-block;
+        margin: 25px 25px 0 0;
+        padding: 15px;
+        width: 208px;
+        height: 100px;
+        vertical-align: top;
+
+
+        a.home-5-info-content {
+          text-align: center;
+          font-weight: 600;
+          font-size: 14px;
+          text-decoration: none;
+          color: #000000;
+
+          img {
+            height: 46px;
+            width: auto;
+            margin: 0 auto 5px;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .third-image-wrap {
+      position: absolute;
+      left: 150px;
+      bottom: -180px;
+    }
+
+    .middle-graphic-wrap {
+      bottom: -215px;
+    }
+  }
+
+  #home-section-6 {
+    padding: 230px 0 150px;
+
+    h3 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+  }
+}
