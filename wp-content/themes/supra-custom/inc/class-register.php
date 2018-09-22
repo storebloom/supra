@@ -190,9 +190,9 @@ class Register {
 	/**
 	 * Enqueue Assets for front ui.
 	 *
-	 * @action admin_enqueue_scripts
+	 * @action wp_enqueue_scripts
 	 */
-	public function enqueue_admin_assets() {
+	public function enqueue_assets() {
 		global $post;
 
 		wp_enqueue_script( "{$this->theme->assets_prefix}-front-ui" );

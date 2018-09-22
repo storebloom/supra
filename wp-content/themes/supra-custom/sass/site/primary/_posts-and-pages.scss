@@ -6,6 +6,7 @@ body {
 	.middle-graphic-wrap {
 		position: absolute;
 		bottom: -85px;
+		left: 0;
 		margin: auto;
 		width: 100%;
 		text-align: center;
@@ -20,6 +21,19 @@ body {
 				height: 140px;
 			}
 		}
+	}
+
+	.section-content {
+		max-width: 909px;
+		font-size: 30px;
+		font-weight: 500;
+		line-height: 40px;
+		text-align: center;
+		margin: auto;
+	}
+
+	.grey-back {
+		background: #f5f5f5;
 	}
 }
 
