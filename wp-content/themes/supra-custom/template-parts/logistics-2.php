@@ -34,6 +34,6 @@ $overviews    = isset( $section_info['history'] ) && is_array( $section_info['hi
 	</div>
 
 	<div class="middle-graphic-wrap down">
-		<?php get_template_part( 'images/inline', 'about-mid-cir-icon-lines.svg' ); ?>
+		<?php get_template_part( 'images/inline', 'down-arrow-center.svg' ); ?>
 	</div>
 </div>
