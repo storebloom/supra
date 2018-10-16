@@ -24,8 +24,4 @@ $partners     = isset( $section_info['partners'] ) && is_array( $section_info['p
 			</div>
 		<?php endforeach; ?>
 	</div>
-
-	<div class="middle-graphic-wrap">
-		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
-	</div>
 </div>

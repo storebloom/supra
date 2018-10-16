@@ -10,7 +10,7 @@
  */
 
 $phone_number = get_option( 'supra-phone', true );
-$phone_number = ! empty( $phone_number ) ? $phone_number : '';
+$phone_number = ! empty( $phone_number ) ? explode( ',', $phone_number ) : [ '1', '2', '3' ];
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -43,7 +43,22 @@ $phone_number = ! empty( $phone_number ) ? $phone_number : '';
 				<img id="open-supra-menu" class="open-menu-icon" src="<?php echo esc_url( get_template_directory_uri() . '/images/icon-menu.svg' ); ?>" alt="Open Navigation Menu" />
 				<?php
 			else :
-				echo esc_html( $phone_number );
+				?>
+			<ul class="phone-numbers">
+				<li class="phone-number-item">
+					<?php echo esc_html__( 'Transportation', 'supra-custom' ); ?>
+					<?php echo esc_html( $phone_number[0] ); ?>
+				</li>
+				<li class="phone-number-item">
+					<?php echo esc_html__( 'Distribution', 'supra-custom' ); ?>
+					<?php echo esc_html( $phone_number[1] ); ?>
+				</li>
+				<li class="phone-number-item">
+					<?php echo esc_html__( 'Logistics', 'supra-custom' ); ?>
+					<?php echo esc_html( $phone_number[1] ); ?>
+				</li>
+			</ul>
+				<?php
 			endif;
 			?>
 		</div>

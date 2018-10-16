@@ -21,21 +21,11 @@ $rss = ! empty( $rss ) ? $rss : '#';
 
 	</div><!-- #content -->
 <div class="global-footer-section">
-<div class="middle-graphic-wrap">
+<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 	<?php get_template_part( 'images/inline', 'long-lines-icons.svg' ); ?>
 </div>
 
-<?php if ( is_page( 'contact' ) ) : ?>
-	<h4><?php echo esc_html__( 'Contact Us Today', 'supra-custom' ); ?></h4>
-
-	<h3><?php echo esc_html__( 'How Can We Help.', 'supra-custom' ); ?></h3>
-
-	<?php echo do_shortcode( '[contact-form-7 id="149" title="Contact Form"]' ); ?>
-	<?php
-else :
-	include locate_template( 'template-parts/home-7.php' );
-endif;
-?>
+<?php require locate_template( 'template-parts/footer-section.php' ); ?>
 </div>
 <footer id="colophon" class="site-footer">
 		<div class="first-footer-area"><?php dynamic_sidebar( 'footer-1' ); ?></div>

@@ -884,14 +884,52 @@ a:hover, a:active {
   display: inline-block;
 }
 #masthead .header-phone-wrap {
-  display: inline-block;
   float: right;
-  line-height: 60px;
-  padding: 0 28px;
+  max-width: 170px;
+  width: 100%;
+}
+#masthead .header-phone-wrap .phone-numbers {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+#masthead .header-phone-wrap .phone-numbers:hover .phone-number-item:nth-child(2) {
+  display: block;
+  position: absolute;
+  top: 60px;
+}
+#masthead .header-phone-wrap .phone-numbers:hover .phone-number-item:nth-child(3) {
+  display: block;
+  position: absolute;
+  top: 120px;
+}
+#masthead .header-phone-wrap .phone-numbers .phone-number-item {
+  list-style: none;
+  display: none;
+  height: 60px;
+  text-align: center;
   background: #000000;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
+  text-transform: uppercase;
+  padding: 11px 25px;
+  border-top: 1px solid #ffffff;
+}
+#masthead .header-phone-wrap .phone-numbers .phone-number-item:first-child {
+  display: block;
+  position: relative;
+  border: none;
+}
+#masthead .header-phone-wrap .phone-numbers .phone-number-item:first-child::before {
+  content: "";
+  background: url(/wp-content/themes/supra-custom/images/down-arrow-select.svg);
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  width: 14px;
+  height: 8px;
+  background-repeat: no-repeat;
 }
 
 /* Footer Styling */
@@ -969,10 +1007,10 @@ a:hover, a:active {
   background: #ffffff;
   display: inline-block;
   margin-right: 25px;
-  padding: 15px;
-  width: 208px;
+  padding: 15px 0;
   height: 100px;
   vertical-align: top;
+  width: 15%;
 }
 .global-footer-section #home-section-7 .home-7-info-wrap .home-7-info-item a.home-7-info-content {
   text-align: center;
@@ -986,6 +1024,10 @@ a:hover, a:active {
   width: auto;
   margin: 0 auto 5px;
   display: block;
+}
+.global-footer-section #home-section-7 form {
+  max-width: 674px;
+  margin: auto;
 }
 
 /*--------------------------------------------------------------
@@ -1056,13 +1098,13 @@ h4.section-title {
   width: 100%;
   position: relative;
   margin: 20px 0 -42px -20px;
-  border-radius: 0;
+  border-radius: 0 !important;
   height: 50px;
-  background-color: #cc0000;
-  color: #ffffff;
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
   text-align: left;
-  border: 0;
-  font-size: 12px;
+  border: 0 !important;
+  font-size: 12px !important;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -1070,6 +1112,19 @@ h4.section-title {
   content: "";
   position: absolute;
   right: 20px;
+  height: 16px;
+  width: 27px;
+  background: url(/wp-content/themes/supra-custom/images/right-arrow-icon.svg);
+}
+
+.add-arrow-here {
+  position: relative;
+}
+.add-arrow-here::after {
+  content: "";
+  position: absolute;
+  right: 40px;
+  top: 2px;
   height: 16px;
   width: 27px;
   background: url(/wp-content/themes/supra-custom/images/right-arrow-icon.svg);
@@ -1781,6 +1836,590 @@ body.page-template-logistics-template #logistics-section-3 .section-3-right.seco
 }
 body.page-template-logistics-template #logistics-section-3 .section-3-right.second .line-graphic-wrap {
   top: 0;
+}
+
+/* Distribution page styles. */
+body.page-template-distribution-template .distribution-section {
+  padding: 80px 0 90px;
+  text-align: center;
+  position: relative;
+}
+body.page-template-distribution-template #distribution-section-1 {
+  padding: 80px 0;
+  text-align: right;
+}
+body.page-template-distribution-template #distribution-section-1 .section-logo {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 80px;
+  float: left;
+  margin-left: 146px;
+  max-width: 474px;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  margin-right: 40px;
+  padding: 10px 20px 14px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 442px;
+  text-align: center;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap form {
+  font-size: 14px;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap form input[type=radio] {
+  margin: 14px 5px 14px 30px;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap form input[type=radio]:first-of-type {
+  margin-left: 0;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap form .form-zip {
+  margin-bottom: 10px;
+}
+body.page-template-distribution-template #distribution-section-1 .request-info-wrap form button {
+  width: 110%;
+  max-width: unset;
+}
+body.page-template-distribution-template #distribution-section-2 {
+  padding-bottom: 300px;
+}
+body.page-template-distribution-template #distribution-section-2 .overview-wrap {
+  margin-top: 75px;
+}
+body.page-template-distribution-template #distribution-section-2 .overview-wrap .overview-item {
+  display: inline-block;
+  background: #000000;
+}
+body.page-template-distribution-template #distribution-section-2 .overview-wrap .overview-item a {
+  width: 208px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 40px;
+  text-decoration: none;
+}
+body.page-template-distribution-template #distribution-section-2 .overview-wrap .overview-item a img {
+  margin: 8% auto 0;
+  display: block;
+  max-height: 40px;
+  width: auto;
+}
+body.page-template-distribution-template #distribution-section-3 {
+  text-align: left;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-content {
+  font-size: 14px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left {
+  text-align: left;
+  position: relative;
+  top: -70px;
+  display: inline-block;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .image-wrap {
+  display: inline-block;
+  position: relative;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .image-wrap .image-number {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  font-size: 80px;
+  color: #ffffff;
+  font-weight: 700;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left:first-of-type .image-number {
+  top: 300px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .float-image-wrap {
+  position: relative;
+  top: -120px;
+  left: 145px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .section-3-content {
+  display: inline-block;
+  max-width: 441px;
+  vertical-align: top;
+  margin: 50px 0 0 25px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .section-3-content h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .section-3-content h2 img {
+  max-width: 60px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left .line-graphic-wrap {
+  position: absolute;
+  bottom: 200px;
+  right: 210px;
+  z-index: 2;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left.second {
+  top: -150px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left.second .image-number {
+  top: 40px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left.second .line-graphic-wrap {
+  bottom: -160px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left.third .image-number {
+  top: 40px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-left.third .section-3-content {
+  margin-top: 100px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right {
+  text-align: right;
+  margin: -400px 30px 0 0;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right .image-wrap {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right .image-wrap .image-number {
+  position: absolute;
+  top: 43px;
+  left: 80px;
+  font-size: 80px;
+  color: #ffffff;
+  font-weight: 700;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right .section-3-content {
+  display: inline-block;
+  max-width: 500px;
+  margin: 200px 80px 0 0;
+  text-align: left;
+  vertical-align: top;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right .section-3-content h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right .section-3-content h2 img {
+  max-width: 60px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right .line-graphic-wrap {
+  position: relative;
+  top: -100px;
+  z-index: 2;
+  left: -300px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right.second {
+  margin-top: -190px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right.second .image-wrap {
+  top: 70px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right.second .section-3-content {
+  margin-right: 100px;
+}
+body.page-template-distribution-template #distribution-section-3 .section-3-right.second .line-graphic-wrap {
+  top: 0;
+}
+
+/* Blog styling. */
+.page-template-blog-template .blog-section {
+  padding: 130px 0 90px;
+  text-align: center;
+  position: relative;
+}
+.page-template-blog-template #blog-section-1 {
+  padding: 190px 145px;
+  text-align: left;
+}
+.page-template-blog-template #blog-section-1 .section-title {
+  font-size: 80px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 90px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  max-width: 680px;
+  font-weight: 600;
+  display: inline-block;
+}
+.page-template-blog-template #blog-section-1 .middle-graphic-wrap {
+  bottom: -145px;
+}
+.page-template-blog-template #blog-section-1 .middle-graphic-wrap svg {
+  -ms-transform: rotateX(180deg);
+  /* IE 9 */
+  -webkit-transform: rotateX(180deg);
+  /* Safari 3-8 */
+  transform: rotateX(180deg);
+}
+.page-template-blog-template #blog-section-2 {
+  padding-bottom: 220px;
+}
+.page-template-blog-template #blog-section-2 .section-image {
+  text-align: left;
+  margin: 32px;
+  position: absolute;
+  z-index: 1;
+}
+.page-template-blog-template #blog-section-3 .blog-list {
+  max-width: 1025px;
+  margin: 0 auto 80px;
+}
+.page-template-blog-template #blog-section-3 .blog-list .article-wrap {
+  max-width: 325px;
+  width: 100%;
+  margin: 0 25px 25px 0;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.page-template-blog-template #blog-section-3 .blog-list .article-wrap a {
+  color: #000000;
+  text-decoration: none;
+}
+.page-template-blog-template #blog-section-3 .blog-list .article-wrap:nth(3n+3) {
+  margin-right: 0;
+}
+.page-template-blog-template #blog-section-3 .blog-list .article-wrap .article-title {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  padding: 20px;
+}
+.page-template-blog-template #blog-section-3 .blog-list .article-wrap .article-content {
+  font-size: 14px;
+  color: #999999;
+  padding: 0 20px 20px;
+  font-weight: 500;
+}
+.page-template-blog-template #blog-section-3 .blog-list .article-wrap .article-read-more {
+  color: #1A96AA;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 20px 20px;
+}
+
+.single-post article header {
+  padding: 100px 145px;
+  text-align: left;
+  position: relative;
+}
+.single-post article header .section-title {
+  font-size: 80px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 90px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  display: inline-block;
+}
+.single-post article header .middle-graphic-wrap {
+  bottom: -90px;
+}
+.single-post article .entry-content {
+  padding: 90px 0;
+}
+
+/* Careers styling. */
+.page-template-careers-template .careers-section {
+  padding: 80px 0 90px;
+  text-align: center;
+  position: relative;
+}
+.page-template-careers-template #careers-section-1 {
+  padding: 190px 145px;
+  text-align: left;
+}
+.page-template-careers-template #careers-section-1 .section-title {
+  font-size: 80px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 90px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  max-width: 680px;
+  font-weight: 600;
+  display: inline-block;
+}
+.page-template-careers-template #careers-section-1 .middle-graphic-wrap {
+  bottom: -90px;
+}
+.page-template-careers-template #careers-section-1 .middle-graphic-wrap svg {
+  -ms-transform: rotateX(180deg);
+  /* IE 9 */
+  -webkit-transform: rotateX(180deg);
+  /* Safari 3-8 */
+  transform: rotateX(180deg);
+}
+.page-template-careers-template #careers-section-2 {
+  padding-bottom: 220px;
+}
+.page-template-careers-template #careers-section-2 .section-image {
+  text-align: left;
+  margin: 32px;
+  position: absolute;
+  z-index: 1;
+}
+.page-template-careers-template #careers-section-3 {
+  text-align: left;
+  padding-bottom: 0;
+}
+.page-template-careers-template #careers-section-3 .section-3-left {
+  text-align: left;
+  position: relative;
+  display: inline-block;
+}
+.page-template-careers-template #careers-section-3 .section-3-left .image-wrap {
+  display: inline-block;
+  position: relative;
+}
+.page-template-careers-template #careers-section-3 .section-3-left .float-image-wrap {
+  position: relative;
+  top: -120px;
+  left: 145px;
+}
+.page-template-careers-template #careers-section-3 .section-3-left .section-3-content {
+  display: inline-block;
+  max-width: 441px;
+  vertical-align: top;
+  margin: 180px 0 0 25px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.page-template-careers-template #careers-section-3 .section-3-left .line-graphic-wrap {
+  position: absolute;
+  bottom: 95px;
+  left: 70px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+.page-template-careers-template #careers-section-4 {
+  padding-top: 0;
+  margin-top: -70px;
+  text-align: left;
+  max-width: 900px;
+  margin: auto;
+}
+.page-template-careers-template #careers-section-4 .careers-count {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.page-template-careers-template #careers-section-4 .career-wrap {
+  border-top: 1px solid #cccccc;
+  padding: 10px 0;
+}
+.page-template-careers-template #careers-section-4 .career-wrap a {
+  text-decoration: none;
+  color: #000000;
+}
+.page-template-careers-template #careers-section-4 .career-wrap a .article-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 15px;
+  line-height: 0;
+  margin-top: 20px;
+}
+.page-template-careers-template #careers-section-4 .career-wrap a .article-content {
+  padding: 0 15px;
+  color: #999999;
+  font-size: 12px;
+  font-weight: 500;
+}
+.page-template-careers-template #careers-section-4 .career-wrap a .right-arrow-icon {
+  float: right;
+  margin-top: -50px;
+  padding-right: 15px;
+}
+
+/* Contact styling. */
+.page-template-contact-template .contact-section {
+  padding: 130px 0 90px;
+  text-align: center;
+  position: relative;
+}
+.page-template-contact-template #contact-section-1 {
+  padding: 135px 145px;
+  text-align: left;
+}
+.page-template-contact-template #contact-section-1 .section-title {
+  font-size: 80px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 90px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  max-width: 680px;
+  font-weight: 600;
+  display: inline-block;
+}
+.page-template-contact-template #contact-section-1 .middle-graphic-wrap {
+  bottom: -145px;
+}
+.page-template-contact-template #contact-section-1 .middle-graphic-wrap svg {
+  -ms-transform: rotateX(180deg);
+  /* IE 9 */
+  -webkit-transform: rotateX(180deg);
+  /* Safari 3-8 */
+  transform: rotateX(180deg);
+}
+
+/** Rate Request page style. */
+.page-template-rate-request-template .request-rate-section {
+  text-align: center;
+  position: relative;
+}
+.page-template-rate-request-template #request-rate-section-1 {
+  padding: 135px 145px;
+  text-align: left;
+}
+.page-template-rate-request-template #request-rate-section-1 .section-title {
+  font-size: 80px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 90px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  max-width: 680px;
+  font-weight: 600;
+  display: inline-block;
+}
+.page-template-rate-request-template #request-rate-section-1 .middle-graphic-wrap {
+  bottom: -145px;
+}
+.page-template-rate-request-template #request-rate-section-1 .middle-graphic-wrap svg {
+  -ms-transform: rotateX(180deg);
+  /* IE 9 */
+  -webkit-transform: rotateX(180deg);
+  /* Safari 3-8 */
+  transform: rotateX(180deg);
+}
+.page-template-rate-request-template #request-rate-section-2 {
+  margin: auto;
+  padding: 100px 0 90px;
+}
+.page-template-rate-request-template #request-rate-section-2 .grey-back {
+  padding: 50px 0;
+}
+.page-template-rate-request-template #request-rate-section-2 label {
+  max-width: 675px;
+  width: 100%;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+.page-template-rate-request-template #request-rate-section-2 label span {
+  color: #cc0000;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-list-item.first {
+  margin-left: 0;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap input, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap select, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap textarea {
+  margin: 0 auto 10px;
+  position: relative;
+  max-width: 675px;
+  display: inline-block;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap input::placeholder, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap select::placeholder, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap textarea::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #999999;
+  opacity: 1;
+  /* Firefox */
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap input:-ms-input-placeholder, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap select:-ms-input-placeholder, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #999999;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap input::-ms-input-placeholder, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap select::-ms-input-placeholder, .page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap textarea::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #999999;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap .wpcf7-radio {
+  display: inline-block;
+  width: 100%;
+  max-width: 675px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.radio-286 .wpcf7-radio {
+  margin-bottom: -10px;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.company::before {
+  content: "*";
+  color: #cc0000;
+  position: absolute;
+  top: -1px;
+  left: 85px;
+  z-index: 1;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.tel-505::before {
+  content: "*";
+  color: #cc0000;
+  position: absolute;
+  top: -1px;
+  left: 63px;
+  z-index: 1;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.your-name::before {
+  content: "*";
+  color: #cc0000;
+  position: absolute;
+  top: -1px;
+  left: 60px;
+  z-index: 1;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap select {
+  background: #ffffff;
+  width: 100%;
+  height: 50px;
+  color: #999999;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding-left: 15px;
+  position: relative;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.menu-853 {
+  position: relative;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.menu-853::after {
+  content: "";
+  background: url("/wp-content/themes/supra-custom/images/down-arrow-select.svg");
+  position: absolute;
+  right: 20px;
+  top: 7px;
+  width: 14px;
+  height: 8px;
+  background-repeat: no-repeat;
+}
+.page-template-rate-request-template #request-rate-section-2 .wpcf7-form-control-wrap.menu-853::before {
+  content: "*";
+  color: #cc0000;
+  position: absolute;
+  top: -1px;
+  left: 60px;
+  z-index: 1;
 }
 
 /*--------------------------------------------------------------

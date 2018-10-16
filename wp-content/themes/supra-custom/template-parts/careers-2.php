@@ -21,4 +21,8 @@ $section_info = get_section_info( 'careers-section', '2', get_the_ID() );
 			<?php echo wp_kses_post( $section_info['content'] ); ?>
 		</div>
 	<?php endif; ?>
+
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap down">
+		<?php get_template_part( 'images/inline', 'down-arrow-center.svg' ); ?>
+	</div>
 </div>

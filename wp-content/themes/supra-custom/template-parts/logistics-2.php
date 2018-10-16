@@ -33,7 +33,7 @@ $overviews    = isset( $section_info['history'] ) && is_array( $section_info['hi
 		<?php endforeach; ?>
 	</div>
 
-	<div class="middle-graphic-wrap down">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap down">
 		<?php get_template_part( 'images/inline', 'down-arrow-center.svg' ); ?>
 	</div>
 </div>

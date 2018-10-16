@@ -36,7 +36,7 @@
 						<div class="article-content">
 							<?php the_content(); ?>
 						</div>
-						<div class="right-arrow-icon">
+						<div data-aos="zoom-in-right" class="right-arrow-icon">
 							<?php get_template_part( 'images/inline', 'career-icon-black.svg' ); ?>
 						</div>
 					</a>

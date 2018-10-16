@@ -49,13 +49,59 @@
   }
 
   .header-phone-wrap {
-    display: inline-block;
     float: right;
-    line-height: 60px;
-    padding: 0 28px;
-    background: #000000;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
+    max-width: 170px;
+    width: 100%;
+
+    .phone-numbers {
+      padding: 0;
+      margin: 0;
+      position: relative;
+
+      &:hover {
+        .phone-number-item:nth-child(2) {
+          display: block;
+          position: absolute;
+          top: 60px;
+
+        }
+        .phone-number-item:nth-child(3) {
+          display: block;
+          position: absolute;
+          top: 120px;
+        }
+      }
+
+      .phone-number-item {
+        list-style: none;
+        display: none;
+        height: 60px;
+        text-align: center;
+        background: #000000;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 11px 25px;
+        border-top: 1px solid #ffffff;
+
+        &:first-child {
+          display: block;
+          position: relative;
+          border: none;
+
+          &::before {
+            content: "";
+            background: url(/wp-content/themes/supra-custom/images/down-arrow-select.svg);
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+            width: 14px;
+            height: 8px;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
   }
 }

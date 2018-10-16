@@ -39,7 +39,7 @@ $section_info = get_section_info( 'transportation-section', '1', get_the_ID() );
 			</button>
 		</form>
 	</div>
-	<div class="middle-graphic-wrap">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
 	</div>
 </div>
