@@ -1,0 +1,35 @@
+/* Contact styling. */
+
+.page-template-contact-template {
+  .contact-section {
+    padding: 130px 0 90px;
+    text-align: center;
+    position: relative;
+  }
+
+  #contact-section-1 {
+    padding: 135px 145px;
+    text-align: left;
+
+    .section-title {
+      font-size: 80px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 90px;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+      max-width: 680px;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .middle-graphic-wrap {
+      bottom: -145px;
+
+      svg {
+        -ms-transform: rotateX(180deg); /* IE 9 */
+        -webkit-transform: rotateX(180deg); /* Safari 3-8 */
+        transform: rotateX(180deg);
+      }
+    }
+  }
+}

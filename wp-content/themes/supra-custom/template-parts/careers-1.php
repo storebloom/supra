@@ -14,7 +14,7 @@ $section_info = get_section_info( 'careers-section', '1', get_the_ID() );
 		<?php echo esc_html( get_the_title() ); ?>
 	</div>
 
-	<div class="middle-graphic-wrap">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
 	</div>
 </div>

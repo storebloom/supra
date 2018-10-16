@@ -14,7 +14,7 @@ $section_info = get_section_info( 'blog-section', '1', get_the_ID() );
 		<?php echo esc_html( get_the_title() ); ?>
 	</div>
 
-	<div class="middle-graphic-wrap">
-		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap">
+		<?php get_template_part( 'images/inline', 'long-lines-icons.svg' ); ?>
 	</div>
 </div>

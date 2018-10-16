@@ -62,6 +62,8 @@ class Theme extends Theme_Base {
 			'jquery',
 			'wp-util',
 		), time(), true );
+		wp_enqueue_style( 'aos-lib', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), time() );
+		wp_enqueue_script( 'aos-scripts', 'https://unpkg.com/aos@2.3.1/dist/aos.js', 'jquery', time(), true );
 	}
 
 	/**

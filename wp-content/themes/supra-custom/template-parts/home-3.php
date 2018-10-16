@@ -44,7 +44,7 @@ $section_info = get_section_info( 'home-section', '3', get_the_ID() );
 			</button>
 		</a>
 	</div>
-	<div class="middle-graphic-wrap short">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap short">
 		<?php get_template_part( 'images/inline', 'long-lines-icons.svg' ); ?>
 	</div>
 </div>

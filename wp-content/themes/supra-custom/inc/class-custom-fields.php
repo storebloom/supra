@@ -211,7 +211,6 @@ class Custom_Fields {
 
 				// Home section 1.
 				$title_field = $this->create_custom_field( $postid, $prefix . '1', 'title', 'text' );
-				$form_field  = $this->create_custom_field( $postid, $prefix . '1', 'form', 'text' );
 
 				// Home section 2.
 				$title_field2  = $this->create_custom_field( $postid, $prefix . '2', 'title', 'text' );
@@ -263,7 +262,11 @@ class Custom_Fields {
 				$image_7_content3 = $this->create_custom_field( $postid, $prefix . '7', 'image-content-3', 'wysiwyg' );
 				$image_link4      = $this->create_custom_field( $postid, $prefix . '7', 'link-4', 'text' );
 				$image_7_content4 = $this->create_custom_field( $postid, $prefix . '7', 'image-content-4', 'wysiwyg' );
+				$image_link5      = $this->create_custom_field( $postid, $prefix . '7', 'link-5', 'text' );
+				$image_7_content5 = $this->create_custom_field( $postid, $prefix . '7', 'image-content-5', 'wysiwyg' );
 				$image_field7     = $this->create_custom_field( $postid, $prefix . '7', 'image', 'image' );
+				$form_field       = $this->create_custom_field( $postid, $prefix . '7', 'form', 'text' );
+				$contact_desc     = $this->create_custom_field( $postid, $prefix . '7', 'contact-desc', 'text' );
 
 				$metabox_array = array(
 					array(
@@ -320,7 +323,7 @@ class Custom_Fields {
 						'screen'      => 'page',
 						'context'     => 'normal',
 						'priority'    => 'high',
-						'args'        => $title_field5 . $content_field7 . $image_7_content1 . $image_link1 . $image_7_content2 . $image_link2 . $image_7_content3 . $image_link3 . $image_7_content4 . $image_link4 . $image_field7,
+						'args'        => $title_field5 . $content_field7 . $image_7_content1 . $image_link1 . $image_7_content2 . $image_link2 . $image_7_content3 . $image_link3 . $image_7_content4 . $image_link4 . $image_7_content5 . $image_link5 . $image_field7 . $form_field . $contact_desc,
 					),
 				);
 				break;

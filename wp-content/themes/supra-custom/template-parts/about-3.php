@@ -32,7 +32,7 @@ $histories    = isset( $section_info['history'] ) && is_array( $section_info['hi
 		</div>
 	</div>
 
-	<div class="middle-graphic-wrap">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 		<?php get_template_part( 'images/inline', 'about-slightly-longer.svg' ); ?>
 	</div>
 

@@ -12,7 +12,7 @@ $show_ftl          = isset( $_GET['type'] ) && 'ftl' === $_GET['type'] ? '' : 'd
 $show_drayage      = ( isset( $_GET['type'] ) && 'drayage' === $_GET['type'] ) || ! isset( $_GET['type'] ) ? '' : 'display: none;'; // CSRF ok.
 $show_distribution = isset( $_GET['type'] ) && 'distribution' === $_GET['type'] ? '' : 'display: none;'; // CSRF ok.
 ?>
-<div data-section="1" id="request-rate-section-2" class="request-rate-section" style="<?php echo esc_attr( $main_image ); ?>">
+<div data-section="1" id="request-rate-section-2" class="request-rate-section">
 	<?php if ( isset( $section_info['form-drayage'] ) && '' !== $section_info['form-drayage'] ) : // CSRF ok. ?>
 		<div id="drayage" class="rr-form-wrap" style="<?php echo esc_attr( $show_drayage ); ?>">
 			<?php echo do_shortcode( $section_info['form-drayage'] ); ?>

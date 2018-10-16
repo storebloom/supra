@@ -90,10 +90,10 @@
         background: #ffffff;
         display: inline-block;
         margin-right: 25px;
-        padding: 15px;
-        width: 208px;
+        padding: 15px 0;
         height: 100px;
         vertical-align: top;
+        width: 15%;
 
         a.home-7-info-content {
           text-align: center;
@@ -110,6 +110,11 @@
           }
         }
       }
+    }
+
+    form {
+      max-width: 674px;
+      margin: auto;
     }
   }
 }

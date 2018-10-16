@@ -135,6 +135,7 @@ class Register {
 		register_setting( 'theme-options-settings', 'supra-twitter' );
 		register_setting( 'theme-options-settings', 'supra-linkedin' );
 		register_setting( 'theme-options-settings', 'supra-rss' );
+		register_setting( 'theme-options-settings', 'supra-contact-back' );
 	}
 
 	/**
@@ -152,7 +153,7 @@ class Register {
 					<tr valign="top">
 						<th scope="row">Phone Number</th>
 						<td>
-							<input type="text" name="supra-phone" value="<?php echo esc_attr( get_option( 'supra-phone' ) ); ?>" />
+							<input type="text" name="supra-phone" value="<?php echo esc_attr( get_option( 'supra-phone' ) ); ?>" size="60"/>
 						</td>
 					</tr>
 					<tr valign="top">
@@ -177,6 +178,12 @@ class Register {
 						<th scope="row">RSS URL</th>
 						<td>
 							<input type="text" name="supra-rss" value="<?php echo esc_attr( get_option( 'supra-rss' ) ); ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row">Contact Footer Back Image</th>
+						<td>
+							<input type="text" name="supra-contact-back" value="<?php echo esc_attr( get_option( 'supra-contact-back' ) ); ?>" />
 						</td>
 					</tr>
 				</table>

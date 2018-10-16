@@ -11,9 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header" style="background: url( <?php echo esc_url( get_the_post_thumbnail_url() ); ?>">
-		<?php the_title(); ?>
+		<div class="section-title">
+			<?php the_title(); ?>
+		</div>
 
-		<div class="middle-graphic-wrap">
+		<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 			<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
 		</div>
 	</header><!-- .entry-header -->

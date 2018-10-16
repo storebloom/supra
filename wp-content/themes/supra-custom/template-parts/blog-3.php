@@ -34,7 +34,7 @@
 							<?php the_title(); ?>
 						</div>
 						<div class="article-content">
-							<?php echo wp_kses_post( wp_trim_words( get_the_content(), 70, '...' ) ); ?>
+							<?php echo wp_kses_post( wp_trim_words( get_the_content(), 31, '...' ) ); ?>
 						</div>
 						<div class="article-read-more">
 							<?php echo esc_html__( 'Read More', 'supra-custom' ); ?>

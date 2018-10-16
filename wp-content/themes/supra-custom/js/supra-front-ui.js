@@ -39,6 +39,8 @@ var SupraFrontUI = ( function( $, wp ) {
 			if ( 'About Us' === this.data.page ) {
 				this.historyWidth();
 			}
+
+			AOS.init();
 		},
 
 		/**

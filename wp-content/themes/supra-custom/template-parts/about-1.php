@@ -16,7 +16,7 @@ $section_info = get_section_info( 'about-section', '1', get_the_ID() );
 		</div>
 	<?php endif; ?>
 
-	<div class="middle-graphic-wrap">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 		<?php get_template_part( 'images/inline', 'middle-line-icon.svg' ); ?>
 	</div>
 </div>

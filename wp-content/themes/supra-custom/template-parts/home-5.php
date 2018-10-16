@@ -31,12 +31,12 @@ $section_info = get_section_info( 'home-section', '5', get_the_ID() );
 	</div>
 
 	<?php if ( isset( $section_info['image'] ) && '' !== $section_info['image'] ) : ?>
-		<div class="third-image-wrap">
+		<div data-aos="zoom-in" class="third-image-wrap">
 			<img src="<?php echo esc_attr( $section_info['image'] ); ?>">
 		</div>
 	<?php endif; ?>
 
-	<div class="middle-graphic-wrap">
+	<div data-aos="zoom-in-down" class="middle-graphic-wrap">
 		<?php get_template_part( 'images/inline', 'home-long-lines.svg' ); ?>
 	</div>
 </div>
